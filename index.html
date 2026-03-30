@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Gimnasio Templo Fitness Caraz - El mejor gimnasio en Caraz, Perú. Entrenamiento con pesas, cardio y asesoramiento personalizado. ¡Transforma tu cuerpo hoy!">
+    <meta name="keywords" content="gimnasio en Caraz, fitness Caraz, entrenamiento Caraz, gimnasio Perú, pesas Caraz, cardio Caraz, musculación Caraz">
+    <meta name="author" content="Gimnasio Templo Fitness Caraz">
+    <title>Gimnasio Templo Fitness Caraz - El Mejor Gimnasio en Caraz, Perú</title>
+    
+    <!-- Preconnect para optimizar carga -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://images.unsplash.com">
+    
+    <!-- Font Awesome - Async -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    
+    <!-- Google Fonts - Display swap para evitar FOIT -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&family=Bebas+Neue&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <i class="fas fa-dumbbell"></i>
+                <span>TEMPLO FITNESS</span>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#ejercicios">Ejercicios</a></li>
+                <li><a href="#entrenadores">Entrenadores</a></li>
+                <li><a href="#planes">Planes</a></li>
+                <li><a href="#horarios">Horarios</a></li>
+                <li><a href="#contacto" class="btn-nav">Contáctanos</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title animate-fade-in">Transforma tu cuerpo en el Templo Fitness</h1>
+            <p class="hero-subtitle animate-fade-in-delay">El mejor gimnasio en Caraz para alcanzar tus objetivos</p>
+            <div class="hero-buttons animate-fade-in-delay-2">
+                <a href="#contacto" class="btn btn-primary">Empieza hoy</a>
+                <a href="https://wa.me/51974572554" target="_blank" class="btn btn-secondary">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+            </div>
+            <div class="hero-rating animate-fade-in-delay-3">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <span>4.8/5 - Calificación de nuestros clientes</span>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Sobre Nosotros -->
+    <section id="nosotros" class="about-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Conócenos</span>
+                <h2 class="section-title">Sobre Nosotros</h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&h=1000&fit=crop" alt="Gimnasio Templo Fitness" loading="lazy">
+                    <div class="about-badge">
+                        <i class="fas fa-trophy"></i>
+                        <span>Mejor Gimnasio en Caraz</span>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <h3>Gimnasio Templo Fitness Caraz</h3>
+                    <p class="about-description">
+                        Somos un gimnasio comprometido con la salud y el bienestar de nuestros clientes. 
+                        En Templo Fitness encontrarás un <strong>excelente ambiente</strong>, equipos modernos de última generación 
+                        y un equipo de profesionales dedicados a ayudarte a alcanzar tus metas.
+                    </p>
+                    <p class="about-description">
+                        Nuestro enfoque está en <strong>mejorar tu salud y condición física</strong> de manera segura y efectiva, 
+                        sin importar si eres principiante o atleta avanzado. Cada persona tiene objetivos únicos, 
+                        y estamos aquí para apoyarte en cada paso de tu transformación.
+                    </p>
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Equipos modernos</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Ambiente motivador</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Entrenadores expertos</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Resultados garantizados</span>
+                        </div>
+                    </div>
+                    <div class="rating-display">
+                        <div class="rating-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span class="rating-number">4.8</span>
+                        </div>
+                        <p class="rating-text">Calificación promedio de nuestros clientes</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios -->
+    <section id="servicios" class="services-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Lo que ofrecemos</span>
+                <h2 class="section-title">Nuestros Servicios</h2>
+                <div class="title-underline"></div>
+                <p class="section-description">Programas diseñados para todos los niveles y objetivos</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-dumbbell"></i>
+                    </div>
+                    <h3>Entrenamiento con Pesas</h3>
+                    <p>Desarrolla fuerza y masa muscular con nuestros equipos de alta calidad y programas especializados.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Máquinas de última generación</li>
+                        <li><i class="fas fa-check"></i> Zona de pesas libres</li>
+                        <li><i class="fas fa-check"></i> Rutinas personalizadas</li>
+                    </ul>
+                </div>
+                <div class="service-card featured">
+                    <div class="service-badge">Popular</div>
+                    <div class="service-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3>Cardio</h3>
+                    <p>Mejora tu resistencia cardiovascular con nuestras zonas de cardio equipadas con tecnología moderna.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Caminadoras profesionales</li>
+                        <li><i class="fas fa-check"></i> Bicicletas estáticas</li>
+                        <li><i class="fas fa-check"></i> Elípticas y más</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>Asesoramiento Personalizado</h3>
+                    <p>Recibe guía profesional para optimizar tus entrenamientos y alcanzar tus metas más rápido.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Evaluación inicial</li>
+                        <li><i class="fas fa-check"></i> Planes personalizados</li>
+                        <li><i class="fas fa-check"></i> Seguimiento continuo</li>
+                    </ul>
+                </div>
+                <div></div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Para Principiantes</h3>
+                    <p>Programas especialmente diseñados para quienes comienzan su viaje fitness.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Inducción completa</li>
+                        <li><i class="fas fa-check"></i> Técnica correcta</li>
+                        <li><i class="fas fa-check"></i> Progresión segura</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ejercicios -->
+    <section id="ejercicios" class="exercises-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Disciplinas</span>
+                <h2 class="section-title">Ejercicios que Ofrecemos</h2>
+                <div class="title-underline"></div>
+                <p class="section-description">Variedad de entrenamientos para todos los objetivos</p>
+            </div>
+            <div class="exercises-grid">
+                <div class="exercise-item">
+                    <div class="exercise-image">
+                        <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=600&h=400&fit=crop" alt="Levantamiento de Pesas" loading="lazy">
+                        <div class="exercise-overlay">
+                            <i class="fas fa-dumbbell"></i>
+                        </div>
+                    </div>
+                    <div class="exercise-content">
+                        <h3>Levantamiento de Pesas</h3>
+                        <p>Desarrolla fuerza y masa muscular con técnicas profesionales</p>
+                    </div>
+                </div>
+                <div class="exercise-item">
+                    <div class="exercise-image">
+                        <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=600&h=400&fit=crop" alt="Cardio Intensivo" loading="lazy">
+                        <div class="exercise-overlay">
+                            <i class="fas fa-running"></i>
+                        </div>
+                    </div>
+                    <div class="exercise-content">
+                        <h3>Cardio Intensivo</h3>
+                        <p>Quema calorías y mejora tu resistencia cardiovascular</p>
+                    </div>
+                </div>
+                <div class="exercise-item">
+                    <div class="exercise-image">
+                        <img src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?w=600&h=400&fit=crop" alt="Entrenamiento Funcional" loading="lazy">
+                        <div class="exercise-overlay">
+                            <i class="fas fa-fire"></i>
+                        </div>
+                    </div>
+                    <div class="exercise-content">
+                        <h3>Entrenamiento Funcional</h3>
+                        <p>Movimientos naturales para mejorar tu rendimiento diario</p>
+                    </div>
+                </div>
+                <div class="exercise-item">
+                    <div class="exercise-image">
+                        <img src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?w=600&h=400&fit=crop" alt="CrossFit" loading="lazy">
+                        <div class="exercise-overlay">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                    </div>
+                    <div class="exercise-content">
+                        <h3>CrossFit</h3>
+                        <p>Entrenamiento de alta intensidad para resultados rápidos</p>
+                    </div>
+                </div>
+                <div class="exercise-item">
+                    <div class="exercise-image">
+                        <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&h=400&fit=crop" alt="Yoga y Flexibilidad" loading="lazy">
+                        <div class="exercise-overlay">
+                            <i class="fas fa-spa"></i>
+                        </div>
+                    </div>
+                    <div class="exercise-content">
+                        <h3>Yoga y Flexibilidad</h3>
+                        <p>Equilibrio mental y físico para tu bienestar integral</p>
+                    </div>
+                </div>
+                <div class="exercise-item">
+                    <div class="exercise-image">
+                        <img src="https://images.unsplash.com/photo-1549060279-7e168fcee0c2?w=600&h=400&fit=crop" alt="Box y Defensa Personal" loading="lazy">
+                        <div class="exercise-overlay">
+                            <i class="fas fa-hand-rock"></i>
+                        </div>
+                    </div>
+                    <div class="exercise-content">
+                        <h3>Box y Defensa Personal</h3>
+                        <p>Libera estrés mientras te pones en forma</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Entrenadores -->
+    <section id="entrenadores" class="trainers-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Nuestro Equipo</span>
+                <h2 class="section-title">Entrenadores Profesionales</h2>
+                <div class="title-underline"></div>
+                <p class="section-description">Expertos certificados comprometidos con tu éxito</p>
+            </div>
+            <div class="trainers-grid">
+                <div class="trainer-card">
+                    <div class="trainer-image">
+                        <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=400&h=500&fit=crop" alt="Entrenador" loading="lazy">
+                        <div class="trainer-social">
+                            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                        </div>
+                    </div>
+                    <div class="trainer-info">
+                        <h3>Carlos Ramírez</h3>
+                        <span class="trainer-specialty">Especialista en Musculación</span>
+                        <p>10 años de experiencia. Certificado en nutrición deportiva y entrenamiento de fuerza.</p>
+                        <div class="trainer-badges">
+                            <span class="badge"><i class="fas fa-certificate"></i> Certificado NSCA</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="trainer-card">
+                    <div class="trainer-image">
+                        <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?w=400&h=500&fit=crop" alt="Entrenadora" loading="lazy">
+                        <div class="trainer-social">
+                            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                        </div>
+                    </div>
+                    <div class="trainer-info">
+                        <h3>Ana Flores</h3>
+                        <span class="trainer-specialty">Entrenadora de Cardio & Funcional</span>
+                        <p>8 años transformando vidas. Experta en pérdida de peso y acondicionamiento físico.</p>
+                        <div class="trainer-badges">
+                            <span class="badge"><i class="fas fa-certificate"></i> Certificada ACE</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="trainer-card">
+                    <div class="trainer-image">
+                        <img src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?w=400&h=500&fit=crop" alt="Entrenador" loading="lazy">
+                        <div class="trainer-social">
+                            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                        </div>
+                    </div>
+                    <div class="trainer-info">
+                        <h3>Miguel Torres</h3>
+                        <span class="trainer-specialty">Coach de CrossFit & HIIT</span>
+                        <p>Campeón regional CrossFit 2024. Especializado en entrenamiento de alta intensidad.</p>
+                        <div class="trainer-badges">
+                            <span class="badge"><i class="fas fa-certificate"></i> CrossFit L2</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Planes -->
+    <section id="planes" class="pricing-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Membresías</span>
+                <h2 class="section-title">Planes y Precios</h2>
+                <div class="title-underline"></div>
+                <p class="section-description">Elige el plan que mejor se adapte a tus necesidades</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <div class="pricing-icon">
+                            <i class="fas fa-running"></i>
+                        </div>
+                        <h3>Básico</h3>
+                        <div class="pricing-price">
+                            <span class="currency">S/</span>
+                            <span class="amount">80</span>
+                            <span class="period">/mes</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Acceso a zona de pesas</li>
+                        <li><i class="fas fa-check"></i> Área de cardio</li>
+                        <li><i class="fas fa-check"></i> Vestuarios y duchas</li>
+                        <li><i class="fas fa-check"></i> Horario regular</li>
+                        <li class="disabled"><i class="fas fa-times"></i> Clases grupales</li>
+                        <li class="disabled"><i class="fas fa-times"></i> Asesoría personalizada</li>
+                    </ul>
+                    <a href="https://wa.me/51974572554?text=Hola,%20quiero%20información%20del%20Plan%20Básico" class="btn-pricing" target="_blank">
+                        Elegir Plan
+                    </a>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="pricing-badge">Más Popular</div>
+                    <div class="pricing-header">
+                        <div class="pricing-icon">
+                            <i class="fas fa-fire"></i>
+                        </div>
+                        <h3>Premium</h3>
+                        <div class="pricing-price">
+                            <span class="currency">S/</span>
+                            <span class="amount">120</span>
+                            <span class="period">/mes</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Todo del plan Básico</li>
+                        <li><i class="fas fa-check"></i> Clases grupales ilimitadas</li>
+                        <li><i class="fas fa-check"></i> 2 sesiones personalizadas/mes</li>
+                        <li><i class="fas fa-check"></i> Plan nutricional básico</li>
+                        <li><i class="fas fa-check"></i> Acceso prioritario</li>
+                        <li><i class="fas fa-check"></i> Descuentos en productos</li>
+                    </ul>
+                    <a href="https://wa.me/51974572554?text=Hola,%20quiero%20información%20del%20Plan%20Premium" class="btn-pricing" target="_blank">
+                        Elegir Plan
+                    </a>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <div class="pricing-icon">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                        <h3>VIP</h3>
+                        <div class="pricing-price">
+                            <span class="currency">S/</span>
+                            <span class="amount">180</span>
+                            <span class="period">/mes</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Todo del plan Premium</li>
+                        <li><i class="fas fa-check"></i> 8 sesiones personalizadas/mes</li>
+                        <li><i class="fas fa-check"></i> Plan nutricional completo</li>
+                        <li><i class="fas fa-check"></i> Evaluación física mensual</li>
+                        <li><i class="fas fa-check"></i> Seguimiento 24/7 online</li>
+                        <li><i class="fas fa-check"></i> Invita a un amigo gratis</li>
+                    </ul>
+                    <a href="https://wa.me/51974572554?text=Hola,%20quiero%20información%20del%20Plan%20VIP" class="btn-pricing" target="_blank">
+                        Elegir Plan
+                    </a>
+                </div>
+            </div>
+            <div class="pricing-note">
+                <i class="fas fa-info-circle"></i>
+                <p>Todos los planes incluyen evaluación inicial gratuita. <strong>¡Primera semana gratis para nuevos miembros!</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Horarios -->
+    <section id="horarios" class="schedule-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Disponibilidad</span>
+                <h2 class="section-title">Horarios de Atención</h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="schedule-content">
+                <div class="schedule-card">
+                    <div class="schedule-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Abierto Todos los Días</h3>
+                    <div class="schedule-details">
+                        <div class="schedule-item">
+                            <span class="day">Lunes a Domingo</span>
+                            <span class="time">Abierto - Cierra a las 11:00 PM</span>
+                        </div>
+                    </div>
+                    <p class="schedule-note">
+                        <i class="fas fa-info-circle"></i>
+                        Abierto todos los días del año para que entrenes cuando quieras
+                    </p>
+                </div>
+                <div class="schedule-features">
+                    <h3>Ventajas de Entrenar con Nosotros</h3>
+                    <div class="feature-list">
+                        <div class="feature">
+                            <i class="fas fa-calendar-check"></i>
+                            <div>
+                                <h4>Horario Flexible</h4>
+                                <p>Entrena a la hora que mejor te convenga</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-users"></i>
+                            <div>
+                                <h4>Ambiente Motivador</h4>
+                                <p>Comparte tu pasión con otros atletas</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-shield-alt"></i>
+                            <div>
+                                <h4>Instalaciones Limpias</h4>
+                                <p>Higiene y seguridad garantizadas</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-bolt"></i>
+                            <div>
+                                <h4>Energía Constante</h4>
+                                <p>Música motivadora y ambiente energético</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ubicación -->
+    <section id="ubicacion" class="location-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Encuéntranos</span>
+                <h2 class="section-title">Nuestra Ubicación</h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="location-content">
+                <div class="location-info">
+                    <div class="location-card">
+                        <div class="location-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="location-details">
+                            <h3>Dirección</h3>
+                            <p>Jr. Carretera Central N°812<br>Caraz, Perú</p>
+                        </div>
+                    </div>
+                    <div class="location-card">
+                        <div class="location-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="location-details">
+                            <h3>Teléfono</h3>
+                            <p><a href="tel:+51974572554">974 572 554</a></p>
+                        </div>
+                    </div>
+                    <div class="location-card">
+                        <div class="location-icon">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                        <div class="location-details">
+                            <h3>Instagram</h3>
+                            <p><a href="https://www.instagram.com/templofitnnesgymcaraz?igsh=Ym90NTJ5azYzaGVi" target="_blank">@templofitness_caraz</a></p>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/51974572554" target="_blank" class="btn btn-primary btn-full">
+                        <i class="fab fa-whatsapp"></i> Chatea con Nosotros
+                    </a>
+                </div>
+                <div class="location-map">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3937.5!2d-77.807!3d-9.044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOcKwMDInMzkuNCJTIDc3wrA0OCcyNS4yIlc!5e0!3m2!1ses!2spe!4v1234567890"
+                        width="100%" 
+                        height="450" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonios -->
+    <section id="testimonios" class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Opiniones</span>
+                <h2 class="section-title">Lo Que Dicen Nuestros Clientes</h2>
+                <div class="title-underline"></div>
+                <div class="overall-rating">
+                    <div class="rating-number">4.8</div>
+                    <div class="rating-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p>Basado en más de 100 reseñas</p>
+                </div>
+            </div>
+            <div class="testimonials-slider-container">
+                <button class="slider-btn slider-btn-prev" id="testimonialPrev" aria-label="Anterior">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                
+                <div class="testimonials-slider" id="testimonialsSlider">
+                    <div class="testimonials-track" id="testimonialsTrack">
+                        <div class="testimonial-card">
+                            <div class="testimonial-header">
+                                <div class="testimonial-avatar">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="testimonial-info">
+                                    <h4>Carlos Mendoza</h4>
+                                    <div class="testimonial-stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>"Excelente gimnasio! Los equipos están en perfecto estado y el ambiente es muy motivador. He logrado mis objetivos en menos tiempo del que esperaba."</p>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="testimonial-header">
+                                <div class="testimonial-avatar">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="testimonial-info">
+                                    <h4>María Rodríguez</h4>
+                                    <div class="testimonial-stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>"La atención personalizada es increíble. Los entrenadores siempre están dispuestos a ayudar y corregir tu técnica. Totalmente recomendado!"</p>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="testimonial-header">
+                                <div class="testimonial-avatar">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="testimonial-info">
+                                    <h4>José García</h4>
+                                    <div class="testimonial-stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>"Muy buen gimnasio en Caraz. Instalaciones limpias, buen horario y precios accesibles. El mejor lugar para entrenar en la zona."</p>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="testimonial-header">
+                                <div class="testimonial-avatar">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="testimonial-info">
+                                    <h4>Ana Torres</h4>
+                                    <div class="testimonial-stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>"Comencé desde cero y me ayudaron en todo el proceso. Ahora me siento más fuerte y saludable. ¡Gracias Templo Fitness!"</p>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="testimonial-header">
+                                <div class="testimonial-avatar">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="testimonial-info">
+                                    <h4>Roberto Silva</h4>
+                                    <div class="testimonial-stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>"Los entrenadores son muy profesionales y atentos. El ambiente es familiar y todos se apoyan mutuamente. Excelente experiencia!"</p>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="testimonial-header">
+                                <div class="testimonial-avatar">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="testimonial-info">
+                                    <h4>Laura Ramírez</h4>
+                                    <div class="testimonial-stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>"Mejor inversión que he hecho. El cambio en mi salud y autoestima ha sido increíble. ¡Highly recommended!"</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="slider-btn slider-btn-next" id="testimonialNext" aria-label="Siguiente">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            
+            <div class="slider-dots" id="sliderDots"></div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section id="contacto" class="cta-section">
+        <div class="cta-overlay"></div>
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Únete Hoy y Comienza Tu Transformación</h2>
+                <p class="cta-subtitle">No esperes más para alcanzar la mejor versión de ti mismo</p>
+                <div class="cta-buttons">
+                    <a href="https://wa.me/51974572554?text=Hola,%20quiero%20información%20sobre%20el%20gimnasio" target="_blank" class="btn btn-primary btn-large">
+                        <i class="fab fa-whatsapp"></i> Contáctanos por WhatsApp
+                    </a>
+                    <a href="tel:+51974572554" class="btn btn-secondary btn-large">
+                        <i class="fas fa-phone"></i> Llámanos Ahora
+                    </a>
+                </div>
+                <div class="cta-info">
+                    <div class="cta-info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Jr. Carretera Central N°812, Caraz</span>
+                    </div>
+                    <div class="cta-info-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Abierto hasta las 11:00 PM</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-dumbbell"></i>
+                        <span>TEMPLO FITNESS CARAZ</span>
+                    </div>
+                    <p>El mejor gimnasio en Caraz para transformar tu cuerpo y alcanzar tus objetivos fitness.</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/templofitnnesgymcaraz?igsh=Ym90NTJ5azYzaGVi" target="_blank" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/profile.php?id=61561312743193&mibextid=ZbWKwL" target="_blank" aria-label="Facebook">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://wa.me/51974572554" target="_blank" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#nosotros">Sobre Nosotros</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#ejercicios">Ejercicios</a></li>
+                        <li><a href="#entrenadores">Entrenadores</a></li>
+                        <li><a href="#planes">Planes</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Servicios</h3>
+                    <ul>
+                        <li>Entrenamiento con Pesas</li>
+                        <li>Cardio</li>
+                        <li>Asesoramiento Personalizado</li>
+                        <li>Rutinas para Todos los Niveles</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Jr. Carretera Central N°812<br>Caraz, Perú</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>974 572 554</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <span>Abierto hasta las 11:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy;  2026 J&G Web Studio. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/51974572554" class="whatsapp-float" target="_blank" aria-label="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop" aria-label="Volver arriba">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts con defer para no bloquear el renderizado -->
+    <script src="script.js" defer></script>
+</body>
+</html>

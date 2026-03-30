@@ -1,0 +1,16 @@
+# robots.txt para Gimnasio Templo Fitness Caraz
+
+User-agent: *
+Allow: /
+
+# Bloquear archivos privados (si existen)
+Disallow: /admin/
+Disallow: /private/
+
+# Permitir a Google indexar CSS y JS
+User-agent: Googlebot
+Allow: /*.css
+Allow: /*.js
+
+# Sitemap (reemplaza con tu URL real)
+Sitemap: https://tudominio.com/sitemap.xml
