@@ -1262,7 +1262,8 @@ section {
     padding: 0 80px;
     max-width: 1300px;
     margin: 0 auto;
-    perspective: 1000px;
+    perspective: 1500px;
+    perspective-origin: center center;
 }
 
 .testimonials-slider {
@@ -1276,10 +1277,11 @@ section {
 .testimonials-track {
     display: flex;
     gap: 2rem;
-    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     will-change: transform;
     align-items: center;
     justify-content: flex-start;
+    transform-style: preserve-3d;
 }
 
 .testimonial-card {
@@ -1287,68 +1289,64 @@ section {
     padding: 2rem;
     border-radius: 20px;
     border-left: 4px solid var(--primary-color);
-    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     flex: 0 0 350px;
     min-width: 350px;
     max-width: 350px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    transform: scale(0.85) translateZ(-100px);
-    opacity: 0.4;
+    transform: scale(0.85) translateZ(-100px) rotateY(0deg);
+    opacity: 0.5;
     filter: blur(2px) brightness(0.7);
     z-index: 1;
     position: relative;
+    transform-style: preserve-3d;
 }
 
-/* Clones tienen el mismo estilo */
-.testimonial-card.clone {
-    pointer-events: none;
+/* Posicionamiento con rotación 3D tipo coverflow */
+/* Tarjetas a la izquierda rotan hacia la derecha */
+.testimonial-card.left-far {
+    transform: scale(0.75) translateZ(-150px) rotateY(45deg);
+    opacity: 0.3;
+    filter: blur(3px) brightness(0.6);
 }
 
-/* Tarjeta activa (central) */
+.testimonial-card.left-near {
+    transform: scale(0.85) translateZ(-80px) rotateY(35deg);
+    opacity: 0.6;
+    filter: blur(1.5px) brightness(0.75);
+    z-index: 5;
+}
+
+/* Tarjeta central */
 .testimonial-card.active {
-    transform: scale(1.1) translateZ(0);
+    transform: scale(1.05) translateZ(50px) rotateY(0deg);
     opacity: 1;
     filter: blur(0) brightness(1);
     z-index: 10;
     box-shadow: 0 20px 60px rgba(227, 30, 36, 0.5), 0 0 30px rgba(227, 30, 36, 0.3);
     border-left-color: var(--secondary-color);
     border-left-width: 5px;
-    animation: slideIn 0.6s ease-out;
 }
 
-/* Tarjetas adyacentes */
-.testimonial-card.adjacent {
-    transform: scale(0.95) translateZ(-50px);
-    opacity: 0.65;
-    filter: blur(1px) brightness(0.85);
+/* Tarjetas a la derecha rotan hacia la izquierda */
+.testimonial-card.right-near {
+    transform: scale(0.85) translateZ(-80px) rotateY(-35deg);
+    opacity: 0.6;
+    filter: blur(1.5px) brightness(0.75);
     z-index: 5;
 }
 
-/* Tarjetas ocultas */
-.testimonial-card.hidden {
-    transform: scale(0.7) translateZ(-150px);
-    opacity: 0;
-    filter: blur(3px) brightness(0.5);
-    pointer-events: none;
+.testimonial-card.right-far {
+    transform: scale(0.75) translateZ(-150px) rotateY(-45deg);
+    opacity: 0.3;
+    filter: blur(3px) brightness(0.6);
 }
 
-/* Animación de entrada */
-@keyframes slideIn {
-    0% {
-        transform: scale(0.9) translateZ(-50px) rotateY(-5deg);
-        opacity: 0.6;
-        filter: blur(2px);
-    }
-    50% {
-        transform: scale(1.05) translateZ(0) rotateY(0deg);
-    }
-    100% {
-        transform: scale(1.1) translateZ(0) rotateY(0deg);
-        opacity: 1;
-        filter: blur(0);
-    }
+/* Clones */
+.testimonial-card.clone {
+    pointer-events: none;
 }
 
 .testimonial-card:hover {
@@ -1356,12 +1354,12 @@ section {
 }
 
 .testimonial-card.active:hover {
-    transform: scale(1.12) translateZ(0);
+    transform: scale(1.08) translateZ(60px) rotateY(0deg);
     box-shadow: 0 25px 70px rgba(227, 30, 36, 0.6), 0 0 40px rgba(227, 30, 36, 0.4);
 }
 
-.testimonial-card.adjacent:hover {
-    transform: scale(0.98) translateZ(-30px);
+.testimonial-card:hover {
+    box-shadow: var(--shadow-hover);
 }
 
 /* Botones del Slider */
@@ -1856,6 +1854,7 @@ section {
     /* Testimonials Slider */
     .testimonials-slider-container {
         padding: 0 60px;
+        perspective: 1200px;
     }
     
     .testimonial-card {
@@ -1864,17 +1863,24 @@ section {
         max-width: 300px;
     }
     
+    .testimonial-card.left-far {
+        transform: scale(0.7) translateZ(-120px) rotateY(40deg);
+    }
+    
+    .testimonial-card.left-near {
+        transform: scale(0.82) translateZ(-70px) rotateY(30deg);
+    }
+    
     .testimonial-card.active {
-        transform: scale(1.05) translateZ(0);
+        transform: scale(1) translateZ(40px) rotateY(0deg);
     }
     
-    .testimonial-card.adjacent {
-        transform: scale(0.92) translateZ(-30px);
+    .testimonial-card.right-near {
+        transform: scale(0.82) translateZ(-70px) rotateY(-30deg);
     }
     
-    .testimonial-card.hidden {
-        transform: scale(0.75) translateZ(-100px);
-        opacity: 0;
+    .testimonial-card.right-far {
+        transform: scale(0.7) translateZ(-120px) rotateY(-40deg);
     }
     
     .slider-btn {
@@ -1986,7 +1992,7 @@ section {
     /* Testimonials Slider */
     .testimonials-slider-container {
         padding: 0 40px;
-        perspective: 800px;
+        perspective: 1000px;
     }
     
     .testimonials-slider {
@@ -1994,22 +2000,30 @@ section {
     }
     
     .testimonial-card {
-        flex: 0 0 260px;
-        min-width: 260px;
-        max-width: 260px;
+        flex: 0 0 280px;
+        min-width: 280px;
+        max-width: 280px;
+        padding: 1.5rem;
+    }
+    
+    .testimonial-card.left-far {
+        transform: scale(0.65) translateZ(-100px) rotateY(35deg);
+    }
+    
+    .testimonial-card.left-near {
+        transform: scale(0.78) translateZ(-60px) rotateY(25deg);
     }
     
     .testimonial-card.active {
-        transform: scale(1) translateZ(0);
+        transform: scale(0.95) translateZ(30px) rotateY(0deg);
     }
     
-    .testimonial-card.adjacent {
-        transform: scale(0.88) translateZ(-40px);
+    .testimonial-card.right-near {
+        transform: scale(0.78) translateZ(-60px) rotateY(-25deg);
     }
     
-    .testimonial-card.hidden {
-        transform: scale(0.7) translateZ(-80px);
-        opacity: 0;
+    .testimonial-card.right-far {
+        transform: scale(0.65) translateZ(-100px) rotateY(-35deg);
     }
     
     .slider-btn {

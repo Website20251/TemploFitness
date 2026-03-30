@@ -320,9 +320,9 @@ class TestimonialsSlider {
         this.cards = this.track.querySelectorAll('.testimonial-card');
         this.createDots();
         
-        // Iniciar en la primera tarjeta real (después de los clones)
-        this.currentIndex = this.getCardsPerView() === 3 ? this.totalCards - 1 : this.totalCards;
-        this.updateSlider(false); // Sin transición inicial
+        // Iniciar mostrando 3 tarjetas centradas
+        this.currentIndex = 3; // Primera tarjeta real después de los clones
+        this.updateSlider(false);
         
         this.attachEventListeners();
         this.startAutoplay();
@@ -332,8 +332,8 @@ class TestimonialsSlider {
     }
     
     cloneCards() {
-        const cardsPerView = this.getCardsPerView();
-        const cloneCount = cardsPerView === 3 ? 3 : cardsPerView;
+        // Clonar 3 tarjetas al inicio y 3 al final para loop infinito
+        const cloneCount = 3;
         
         // Clonar al final
         for (let i = 0; i < cloneCount; i++) {
@@ -369,42 +369,34 @@ class TestimonialsSlider {
     }
     
     updateSlider(withTransition = true) {
-        const cardsPerView = this.getCardsPerView();
         const sliderWidth = this.slider.offsetWidth;
         const gap = 32;
-        const cardWidth = this.cards[0].offsetWidth;
         
-        // Deshabilitar transición si es necesario (para saltos instantáneos)
+        // Ajustar ancho de tarjeta según tamaño de pantalla
+        let cardWidth = 350;
+        if (window.innerWidth <= 480) {
+            cardWidth = 280;
+        } else if (window.innerWidth <= 768) {
+            cardWidth = 300;
+        }
+        
+        // Deshabilitar transición si es necesario
         if (!withTransition) {
             this.track.style.transition = 'none';
-            // Deshabilitar también transiciones de las tarjetas
-            this.cards.forEach(card => {
-                card.style.transition = 'none';
-            });
+            this.cards.forEach(card => card.style.transition = 'none');
         }
         
-        let offset;
-        
-        if (cardsPerView === 1) {
-            offset = -(this.currentIndex * (cardWidth + gap)) + (sliderWidth - cardWidth) / 2;
-        } else if (cardsPerView === 2) {
-            const totalWidth = (cardWidth * 2) + gap;
-            offset = -(this.currentIndex * (cardWidth + gap)) + (sliderWidth - totalWidth) / 2;
-        } else {
-            const centerCardPosition = (this.currentIndex + 1) * (cardWidth + gap);
-            offset = -centerCardPosition + sliderWidth / 2 - cardWidth / 2;
-        }
+        // Calcular offset para centrar la tarjeta actual
+        const centerCardPosition = (this.currentIndex) * (cardWidth + gap);
+        const offset = -centerCardPosition + sliderWidth / 2 - cardWidth / 2;
         
         this.track.style.transform = `translateX(${offset}px)`;
         
-        // Restaurar transición en el siguiente frame para asegurar que el cambio instantáneo se aplique primero
+        // Restaurar transición
         if (!withTransition) {
             requestAnimationFrame(() => {
                 this.track.style.transition = '';
-                // Restaurar transiciones de las tarjetas
-                this.cards.forEach(card => {
-                    card.style.transition = '';
-                });
+                this.cards.forEach(card => card.style.transition = '');
             });
         }
         
@@ -413,61 +405,32 @@ class TestimonialsSlider {
     }
     
     updateCardStates() {
-        const cardsPerView = this.getCardsPerView();
-        
+        // Aplicar clases según posición relativa al centro
         this.cards.forEach((card, index) => {
-            card.classList.remove('active', 'adjacent', 'hidden');
+            card.classList.remove('active', 'left-near', 'left-far', 'right-near', 'right-far');
             
-            if (cardsPerView === 1) {
-                if (index === this.currentIndex) {
-                    card.classList.add('active');
-                } else if (Math.abs(index - this.currentIndex) === 1) {
-                    card.classList.add('adjacent');
-                } else {
-                    card.classList.add('hidden');
-                }
-            } else if (cardsPerView === 2) {
-                if (index === this.currentIndex) {
-                    card.classList.add('active');
-                } else if (index === this.currentIndex + 1) {
-                    card.classList.add('adjacent');
-                } else if (Math.abs(index - this.currentIndex) === 1) {
-                    card.classList.add('adjacent');
-                } else {
-                    card.classList.add('hidden');
-                }
-            } else {
-                const activeIndex = this.currentIndex + 1;
-                
-                if (index === this.currentIndex || index === activeIndex || index === this.currentIndex + 2) {
-                    if (index === activeIndex) {
-                        card.classList.add('active');
-                    } else {
-                        card.classList.add('adjacent');
-                    }
-                } else if (Math.abs(index - activeIndex) === 2) {
-                    card.classList.add('adjacent');
-                } else {
-                    card.classList.add('hidden');
-                }
+            const diff = index - this.currentIndex;
+            
+            if (diff === 0) {
+                card.classList.add('active');
+            } else if (diff === -1) {
+                card.classList.add('left-near');
+            } else if (diff <= -2) {
+                card.classList.add('left-far');
+            } else if (diff === 1) {
+                card.classList.add('right-near');
+            } else if (diff >= 2) {
+                card.classList.add('right-far');
             }
         });
     }
     
     updateDots() {
         const dots = this.dotsContainer.querySelectorAll('.slider-dot');
-        const cardsPerView = this.getCardsPerView();
-        const cloneCount = cardsPerView === 3 ? 3 : cardsPerView;
+        const cloneCount = 3;
         
         // Calcular el índice real (sin contar clones)
         let realIndex = this.currentIndex - cloneCount;
-        
-        // Ajustar para desktop donde mostramos 3 tarjetas
-        if (cardsPerView === 3) {
-            realIndex = this.currentIndex - cloneCount + 1;
-        }
-        
-        // Normalizar el índice
         realIndex = ((realIndex % this.totalCards) + this.totalCards) % this.totalCards;
         
         dots.forEach((dot, index) => {
@@ -477,16 +440,8 @@ class TestimonialsSlider {
     
     goToSlide(index) {
         if (this.isTransitioning) return;
-        
-        const cardsPerView = this.getCardsPerView();
-        const cloneCount = cardsPerView === 3 ? 3 : cardsPerView;
-        
-        // Convertir índice de dot a índice real del array (considerando clones)
+        const cloneCount = 3;
         this.currentIndex = index + cloneCount;
-        if (cardsPerView === 3) {
-            this.currentIndex--;
-        }
-        
         this.updateSlider();
         this.resetAutoplay();
     }
@@ -498,21 +453,10 @@ class TestimonialsSlider {
         this.currentIndex++;
         this.updateSlider();
         
-        // Usar transitionend para sincronizar el loop perfectamente
-        const handleTransitionEnd = () => {
+        setTimeout(() => {
             this.checkLoop();
             this.isTransitioning = false;
-            this.track.removeEventListener('transitionend', handleTransitionEnd);
-        };
-        
-        this.track.addEventListener('transitionend', handleTransitionEnd);
-        
-        // Fallback por si acaso
-        setTimeout(() => {
-            if (this.isTransitioning) {
-                handleTransitionEnd();
-            }
-        }, 550);
+        }, 600);
     }
     
     prev() {
@@ -522,24 +466,14 @@ class TestimonialsSlider {
         this.currentIndex--;
         this.updateSlider();
         
-        const handleTransitionEnd = () => {
+        setTimeout(() => {
             this.checkLoop();
             this.isTransitioning = false;
-            this.track.removeEventListener('transitionend', handleTransitionEnd);
-        };
-        
-        this.track.addEventListener('transitionend', handleTransitionEnd);
-        
-        setTimeout(() => {
-            if (this.isTransitioning) {
-                handleTransitionEnd();
-            }
-        }, 550);
+        }, 600);
     }
     
     checkLoop() {
-        const cardsPerView = this.getCardsPerView();
-        const cloneCount = cardsPerView === 3 ? 3 : cardsPerView;
+        const cloneCount = 3;
         const totalWithClones = this.cards.length;
         
         // Si llegamos a los clones del final, saltar al inicio real
@@ -575,33 +509,13 @@ class TestimonialsSlider {
             card.addEventListener('click', () => {
                 if (this.isTransitioning) return;
                 
-                const cardsPerView = this.getCardsPerView();
-                if (cardsPerView === 1) {
-                    if (index !== this.currentIndex) {
-                        if (index > this.currentIndex) {
-                            this.next();
-                        } else {
-                            this.prev();
-                        }
-                        this.resetAutoplay();
-                    }
-                } else if (cardsPerView === 2) {
-                    if (index === this.currentIndex + 1) {
+                if (index !== this.currentIndex) {
+                    if (index > this.currentIndex) {
                         this.next();
-                        this.resetAutoplay();
-                    } else if (index === this.currentIndex - 1) {
+                    } else {
                         this.prev();
-                        this.resetAutoplay();
                     }
-                } else {
-                    // En desktop (3 tarjetas)
-                    if (index === this.currentIndex) {
-                        this.prev();
-                        this.resetAutoplay();
-                    } else if (index === this.currentIndex + 2) {
-                        this.next();
-                        this.resetAutoplay();
-                    }
+                    this.resetAutoplay();
                 }
             });
             
@@ -621,29 +535,12 @@ class TestimonialsSlider {
             this.handleSwipe(touchStartX, touchEndX);
         }, { passive: true });
         
-        // Redimensionar ventana - reconstruir el carrusel
+        // Redimensionar ventana
         let resizeTimer;
         window.addEventListener('resize', () => {
             clearTimeout(resizeTimer);
             resizeTimer = setTimeout(() => {
-                // Reconstruir el carrusel manteniendo la tarjeta actual
-                const currentRealIndex = this.getRealIndex();
-                this.track.innerHTML = '';
-                this.originalCards.forEach(card => {
-                    this.track.appendChild(card.cloneNode(true));
-                });
-                this.originalCards = Array.from(this.track.querySelectorAll('.testimonial-card'));
-                
-                // Recrear clones
-                while (this.track.querySelector('.clone')) {
-                    this.track.querySelector('.clone').remove();
-                }
-                this.cloneCards();
-                this.cards = this.track.querySelectorAll('.testimonial-card');
-                
-                // Restaurar posición
-                this.createDots();
-                this.goToSlide(currentRealIndex);
+                this.updateSlider(false);
             }, 250);
         });
         
@@ -676,14 +573,8 @@ class TestimonialsSlider {
     }
     
     getRealIndex() {
-        const cardsPerView = this.getCardsPerView();
-        const cloneCount = cardsPerView === 3 ? 3 : cardsPerView;
-        
+        const cloneCount = 3;
         let realIndex = this.currentIndex - cloneCount;
-        if (cardsPerView === 3) {
-            realIndex = this.currentIndex - cloneCount + 1;
-        }
-        
         return ((realIndex % this.totalCards) + this.totalCards) % this.totalCards;
     }
     
