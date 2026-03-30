@@ -1753,7 +1753,8 @@ section {
         height: 100vh;
         background: rgba(10, 10, 10, 0.98);
         flex-direction: column;
-        justify-content: center;
+        justify-content: flex-start;
+        padding-top: 100px;
         gap: 2rem;
         transition: var(--transition);
         backdrop-filter: blur(10px);
